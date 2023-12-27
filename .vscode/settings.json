@@ -1,0 +1,7 @@
+{
+  "workbench.colorTheme": "Copilot Theme - Higher Contrast",
+  "editor.fontFamily": "Fira Code",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontLigatures": true,
+  "material-icon-theme.activeIconPack": "nest",
+}
