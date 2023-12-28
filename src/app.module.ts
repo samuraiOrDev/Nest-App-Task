@@ -4,6 +4,8 @@ import * as dotenv from 'dotenv';
 
 import { TasksModule } from './tasks/tasks.module';
 import { SeedModule } from './seed/seed.module';
+import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
 
 dotenv.config();
 
@@ -12,9 +14,11 @@ dotenv.config();
     MongooseModule.forRoot(process.env.DATABASE_URL),
     TasksModule,
     SeedModule,
+    AuthModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],
 })
 // eslint-disable-next-line prettier/prettier
-export class AppModule {}
+export class AppModule { }
