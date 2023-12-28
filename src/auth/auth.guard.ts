@@ -10,7 +10,7 @@ import { Request } from 'express';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  // eslint-disable-next-line prettier/prettier
+
   constructor(private jwtService: JwtService) { }
 
   async canActivate(context: ExecutionContext): Promise<boolean> {

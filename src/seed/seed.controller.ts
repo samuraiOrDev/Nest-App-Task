@@ -7,7 +7,7 @@ interface TypeResponseSeed {
 }
 @Controller('seed')
 export class SeedController {
-  // eslint-disable-next-line prettier/prettier
+
   constructor(private readonly seedService: SeedService) { }
   @Get()
   async seed(): Promise<TypeResponseSeed> {

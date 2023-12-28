@@ -5,7 +5,7 @@ import { Task, TaskStatus } from '../models/task.model';
 
 @Injectable()
 export class SeedService {
-  // eslint-disable-next-line prettier/prettier
+
   constructor(@InjectModel(Task.name) private taskModel: Model<Task>) { }
 
   async seed() {

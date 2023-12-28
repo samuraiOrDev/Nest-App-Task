@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import {Test, TestingModule} from '@nestjs/testing';
+import {INestApplication} from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import {AppModule} from './../src/app.module';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -32,7 +32,7 @@ describe('AppController (e2e)', () => {
   it('/tasks (POST)', () => {
     return request(app.getHttpServer())
       .post('/tasks')
-      .send({ title: 'Tarea de prueba', description: 'Descripción de prueba' })
+      .send({title: 'Tarea de prueba', description: 'Descripción de prueba'})
       .expect(201)
       .expect((res) => {
         expect(res.body.task.title).toEqual('Tarea de prueba');

@@ -5,7 +5,7 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
-  // eslint-disable-next-line prettier/prettier
+
   constructor(private userService: UserService, private jwtService: JwtService) { }
 
   async signIn(email: string, password: string) {

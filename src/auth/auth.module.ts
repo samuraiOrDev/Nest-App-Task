@@ -20,5 +20,5 @@ import { UserModule } from 'src/user/user.module';
   providers: [AuthService],
   controllers: [AuthController],
 })
-// eslint-disable-next-line prettier/prettier
+
 export class AuthModule { }

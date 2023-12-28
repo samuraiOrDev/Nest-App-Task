@@ -13,7 +13,7 @@ import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController {
-  // eslint-disable-next-line prettier/prettier
+
   constructor(private authService: AuthService) { }
 
   @HttpCode(HttpStatus.OK)

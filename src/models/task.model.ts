@@ -1,5 +1,5 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import {Prop, Schema, SchemaFactory} from '@nestjs/mongoose';
+import {Document} from 'mongoose';
 
 export enum TaskStatus {
   PENDING = 'pending',
@@ -8,10 +8,10 @@ export enum TaskStatus {
 }
 @Schema()
 export class Task extends Document {
-  @Prop({ required: true })
+  @Prop({required: true})
   title: string;
 
-  @Prop({ required: true })
+  @Prop({required: true})
   description: string;
 
   @Prop({

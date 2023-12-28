@@ -7,7 +7,7 @@ import { CreateUserDto } from '../dto/create-user.dto';
 
 @Injectable()
 export class UserService {
-  // eslint-disable-next-line prettier/prettier
+
   constructor(@InjectModel(User.name) private userModel: Model<User>) { }
 
 

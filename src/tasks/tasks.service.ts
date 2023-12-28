@@ -9,7 +9,7 @@ export interface TypeResponseTask {
 }
 @Injectable()
 export class TasksService {
-  // eslint-disable-next-line prettier/prettier
+
   constructor(@InjectModel(Task.name) private taskModel: Model<Task>) { }
   private tasks = [];
 

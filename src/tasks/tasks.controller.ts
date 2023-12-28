@@ -17,7 +17,7 @@ import { CreateTaskDto, UpdateTaskDto } from '../dto/create-task.dto';
 
 @Controller('tasks')
 export class TasksController {
-  // eslint-disable-next-line prettier/prettier
+
   constructor(private readonly tasksService: TasksService) { }
 
   @Get()

@@ -100,9 +100,6 @@ devDependencies:
   jest:
     specifier: ^29.5.0
     version: 29.7.0(@types/node@20.10.5)(ts-node@10.9.2)
-  prettier:
-    specifier: ^3.0.0
-    version: 3.1.1
   source-map-support:
     specifier: ^0.5.21
     version: 0.5.21
