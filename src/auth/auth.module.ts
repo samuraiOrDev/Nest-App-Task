@@ -3,9 +3,13 @@ import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { User, UserSchema } from 'src/models/user.model';
+import { User, UserSchema } from '../models/user.model';
 import { JwtModule } from '@nestjs/jwt';
 import { UserModule } from 'src/user/user.module';
+import * as dotenv from 'dotenv';
+
+
+dotenv.config();
 
 @Module({
   imports: [

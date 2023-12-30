@@ -13,7 +13,9 @@ export class UserService {
 
   async createUser(createUserDto: CreateUserDto): Promise<User> {
     const { password, username, email } = createUserDto;
+
     const hashedPassword = await bcrypt.hash(password, 10);
+
     const user = new this.userModel({
       username,
       password: hashedPassword,
@@ -27,5 +29,15 @@ export class UserService {
 
   async findOneUser(email: string): Promise<User> {
     return await this.userModel.findOne({ email }).exec();
+  }
+  async findOneUserById(id: string): Promise<User> {
+    return await this.userModel.findById(id).exec();
+  }
+
+  async findAllUsers(role: string): Promise<User[]> {
+
+    if (role === 'all') return await this.userModel.find().exec();
+    const query = { $text: { $search: role.toLowerCase() } };
+    return await this.userModel.find(query).exec();
   }
 }

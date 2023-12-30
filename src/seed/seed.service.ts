@@ -2,11 +2,16 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Task, TaskStatus } from '../models/task.model';
+import { User, UserRole } from '../models/user.model';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class SeedService {
 
-  constructor(@InjectModel(Task.name) private taskModel: Model<Task>) { }
+  constructor(
+    @InjectModel(Task.name) private taskModel: Model<Task>,
+    @InjectModel(User.name) private userModel: Model<User>) { }
+
 
   async seed() {
     const tasks = [
@@ -67,8 +72,30 @@ export class SeedService {
       },
       // Add more tasks as needed
     ];
+    const users = [{
+      username: "Samurai",
+      email: "samurai@ordiales.com",
+      password: bcrypt.hashSync("12345678", 10),
+      role: UserRole.ADMIN
+    },
+    {
+      username: "Ninja",
+      email: "ninja@gmail.com",
+      password: bcrypt.hashSync("12345678", 10),
+    }, {
+      username: "Reina",
+      email: "reina@gmail.com",
+      password: bcrypt.hashSync("12345678", 10),
+    }, {
+      username: "Sparky",
+      email: "sparrky@gmail.com",
+      password: bcrypt.hashSync("12345678", 10),
+    }]
 
     await this.taskModel.deleteMany({});
+    await this.userModel.deleteMany({});
+
     await this.taskModel.insertMany(tasks);
+    await this.userModel.insertMany(users);
   }
 }
